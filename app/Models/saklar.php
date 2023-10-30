@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class saklar extends Model
 {
     use HasFactory;
+    protected $fillable = ['heater', 'waterpump', 'lampu'];
 }

@@ -7,59 +7,34 @@ use Illuminate\Http\Request;
 
 class DhtController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $dhts = dht::all();
+        return response()->json($dhts);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $dht = dht::create($request->all());
+        return response()->json($dht, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(dht $dht)
+    public function show($id)
     {
-        //
+        $dht = dht::findOrFail($id);
+        return response()->json($dht);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(dht $dht)
+    public function update(Request $request, $id)
     {
-        //
+        $dht = dht::findOrFail($id);
+        $dht->update($request->all());
+        return response()->json($dht, 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, dht $dht)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(dht $dht)
-    {
-        //
+        dht::destroy($id);
+        return response()->json(null, 204);
     }
 }

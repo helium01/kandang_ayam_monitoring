@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class rtc extends Model
 {
     use HasFactory;
+    protected $fillable = ['node1'];
 }

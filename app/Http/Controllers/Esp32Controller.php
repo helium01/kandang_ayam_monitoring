@@ -7,59 +7,34 @@ use Illuminate\Http\Request;
 
 class Esp32Controller extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $esp32s = esp32::all();
+        return response()->json($esp32s);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $esp32 = esp32::create($request->all());
+        return response()->json($esp32, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(esp32 $esp32)
+    public function show($id)
     {
-        //
+        $esp32 = esp32::findOrFail($id);
+        return response()->json($esp32);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(esp32 $esp32)
+    public function update(Request $request, $id)
     {
-        //
+        $esp32 = esp32::findOrFail($id);
+        $esp32->update($request->all());
+        return response()->json($esp32, 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, esp32 $esp32)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(esp32 $esp32)
-    {
-        //
+        esp32::destroy($id);
+        return response()->json(null, 204);
     }
 }

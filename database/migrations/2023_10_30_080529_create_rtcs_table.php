@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('rtcs', function (Blueprint $table) {
             $table->id();
+            $table->string("node1");
             $table->timestamps();
         });
     }

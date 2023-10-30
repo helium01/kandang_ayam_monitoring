@@ -7,59 +7,34 @@ use Illuminate\Http\Request;
 
 class RtcController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $rtcs = rtc::all();
+        return response()->json($rtcs);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $rtc = rtc::create($request->all());
+        return response()->json($rtc, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(rtc $rtc)
+    public function show($id)
     {
-        //
+        $rtc = rtc::findOrFail($id);
+        return response()->json($rtc);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(rtc $rtc)
+    public function update(Request $request, $id)
     {
-        //
+        $rtc = rtc::findOrFail($id);
+        $rtc->update($request->all());
+        return response()->json($rtc, 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, rtc $rtc)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(rtc $rtc)
-    {
-        //
+        rtc::destroy($id);
+        return response()->json(null, 204);
     }
 }

@@ -7,59 +7,34 @@ use Illuminate\Http\Request;
 
 class LdrController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $ldrs = ldr::all();
+        return response()->json($ldrs);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $ldr = ldr::create($request->all());
+        return response()->json($ldr, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(ldr $ldr)
+    public function show($id)
     {
-        //
+        $ldr = ldr::findOrFail($id);
+        return response()->json($ldr);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(ldr $ldr)
+    public function update(Request $request, $id)
     {
-        //
+        $ldr = ldr::findOrFail($id);
+        $ldr->update($request->all());
+        return response()->json($ldr, 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, ldr $ldr)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(ldr $ldr)
-    {
-        //
+        ldr::destroy($id);
+        return response()->json(null, 204);
     }
 }

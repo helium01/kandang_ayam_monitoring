@@ -7,59 +7,34 @@ use Illuminate\Http\Request;
 
 class SaklarController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $saklars = Saklar::all();
+        return response()->json($saklars);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $saklar = Saklar::create($request->all());
+        return response()->json($saklar, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(saklar $saklar)
+    public function show($id)
     {
-        //
+        $saklar = Saklar::findOrFail($id);
+        return response()->json($saklar);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(saklar $saklar)
+    public function update(Request $request, $id)
     {
-        //
+        $saklar = Saklar::findOrFail($id);
+        $saklar->update($request->all());
+        return response()->json($saklar, 200);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, saklar $saklar)
+    public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(saklar $saklar)
-    {
-        //
+        Saklar::destroy($id);
+        return response()->json(null, 204);
     }
 }

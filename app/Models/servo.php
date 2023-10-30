@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class servo extends Model
 {
     use HasFactory;
+    protected $fillable = ['node1','node2'];
 }

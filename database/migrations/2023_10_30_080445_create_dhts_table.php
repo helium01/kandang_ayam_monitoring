@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('dhts', function (Blueprint $table) {
             $table->id();
+            $table->string("node1");
+            $table->string("node2");
             $table->timestamps();
         });
     }

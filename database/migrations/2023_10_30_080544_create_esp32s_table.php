@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('esp32s', function (Blueprint $table) {
             $table->id();
+            $table->string("node1");
             $table->timestamps();
         });
     }

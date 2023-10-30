@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('saklars', function (Blueprint $table) {
             $table->id();
+            $table->string("heater")->nullable();
+            $table->string("waterpump")->nullable();
+            $table->string("lampu")->nullable();
             $table->timestamps();
         });
     }
