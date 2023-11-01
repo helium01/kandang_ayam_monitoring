@@ -9,32 +9,40 @@ class AyamController extends Controller
 {
     public function index()
     {
-        $ayams = ayam::all();
-        return response()->json($ayams);
+        $data = ayam::all();
+        // return response()->json($ayams);
+        return view("admin.ayam.index",compact('data'));
     }
+    public function create()
+    {
+        // $ayams = ayam::all();
+        // return response()->json($ayams);
+        return view("admin.ayam.create");
+    }
+    
 
     public function store(Request $request)
     {
         $ayam = ayam::create($request->all());
-        return response()->json($ayam, 201);
+        return redirect("/ayams");
     }
 
     public function show($id)
     {
         $ayam = ayam::findOrFail($id);
-        return response()->json($ayam);
+        return view("admin.ayam.edit",compact('ayam'));
     }
 
     public function update(Request $request, $id)
     {
         $ayam = ayam::findOrFail($id);
         $ayam->update($request->all());
-        return response()->json($ayam, 200);
+        return redirect("/ayams");
     }
 
     public function destroy($id)
     {
         ayam::destroy($id);
-        return response()->json(null, 204);
+        return redirect("/ayams");
     }
 }

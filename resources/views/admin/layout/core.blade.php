@@ -90,7 +90,7 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./tables.html">
+  <a class="nav-link text-white " href="/ayams">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">table_view</i>
@@ -102,7 +102,7 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./billing.html">
+  <a class="nav-link text-white " href="/esp32">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">receipt_long</i>
@@ -114,7 +114,7 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./virtual-reality.html">
+  <a class="nav-link text-white " href="/dht">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">view_in_ar</i>
@@ -126,7 +126,7 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./rtl.html">
+  <a class="nav-link text-white " href="/ldr">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
@@ -138,7 +138,7 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./notifications.html">
+  <a class="nav-link text-white " href="/rtc">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">notifications</i>
@@ -149,7 +149,7 @@
 </li>
 
 <li class="nav-item">
-  <a class="nav-link text-white " href="./profile.html">
+  <a class="nav-link text-white " href="/saklars">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">person</i>
@@ -161,7 +161,7 @@
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="./sign-in.html">
+  <a class="nav-link text-white " href="/servos">
     
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">login</i>

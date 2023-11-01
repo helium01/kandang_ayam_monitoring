@@ -9,8 +9,14 @@ class RtcController extends Controller
 {
     public function index()
     {
-        $rtcs = rtc::all();
-        return response()->json($rtcs);
+        $rtcs = rtc::orderBy("created_at","desc")->get();
+        return response()->json($rtcs, 201);
+        // return view('admin.rtc.table',compact('rtcs'));
+    }
+    public function index2()
+    {
+        $data = rtc::orderBy("created_at",'desc')->simplePaginate(10);
+        return view('admin.rtc.index',compact('data'));
     }
 
     public function store(Request $request)

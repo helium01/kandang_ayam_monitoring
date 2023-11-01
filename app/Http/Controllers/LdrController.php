@@ -12,6 +12,11 @@ class LdrController extends Controller
         $ldrs = ldr::all();
         return response()->json($ldrs);
     }
+    public function index2()
+    {
+        $data = ldr::orderBy("created_at",'desc')->simplePaginate(10);
+        return view('admin.ldr.index',compact('data'));
+    }
 
     public function store(Request $request)
     {

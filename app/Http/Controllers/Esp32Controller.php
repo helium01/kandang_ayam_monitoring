@@ -12,6 +12,11 @@ class Esp32Controller extends Controller
         $esp32s = esp32::all();
         return response()->json($esp32s);
     }
+    public function index2()
+    {
+        $data = esp32::orderBy("created_at",'desc')->simplePaginate(10);
+        return view('admin.esp32.index',compact('data'));
+    }
 
     public function store(Request $request)
     {

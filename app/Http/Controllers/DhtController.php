@@ -12,6 +12,11 @@ class DhtController extends Controller
         $dhts = dht::all();
         return response()->json($dhts);
     }
+    public function index2()
+    {
+        $data = dht::orderBy("created_at",'desc')->simplePaginate(10);
+        return view('admin.dht.index',compact('data'));
+    }
 
     public function store(Request $request)
     {

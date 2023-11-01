@@ -19,19 +19,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 use App\Http\Controllers\SaklarController;
 
-Route::get('/saklars', [SaklarController::class, 'index']);
 Route::post('/saklars', [SaklarController::class, 'store']);
+Route::post('/saklars/front', [SaklarController::class, 'store2']);
 Route::get('/saklars/{id}', [SaklarController::class, 'show']);
 Route::put('/saklars/{id}', [SaklarController::class, 'update']);
 Route::delete('/saklars/{id}', [SaklarController::class, 'destroy']);
 
-use App\Http\Controllers\AyamController;
 
-Route::get('/ayams', [AyamController::class, 'index']);
-Route::post('/ayams', [AyamController::class, 'store']);
-Route::get('/ayams/{id}', [AyamController::class, 'show']);
-Route::put('/ayams/{id}', [AyamController::class, 'update']);
-Route::delete('/ayams/{id}', [AyamController::class, 'destroy']);
 
 use App\Http\Controllers\DhtController;
 
@@ -67,8 +61,8 @@ Route::delete('/rtcs/{id}', [RtcController::class, 'destroy']);
 
 use App\Http\Controllers\ServoController;
 
-Route::get('/servos', [ServoController::class, 'index']);
 Route::post('/servos', [ServoController::class, 'store']);
+Route::post('/servos/front', [ServoController::class, 'store2']);
 Route::get('/servos/{id}', [ServoController::class, 'show']);
 Route::put('/servos/{id}', [ServoController::class, 'update']);
 Route::delete('/servos/{id}', [ServoController::class, 'destroy']);
