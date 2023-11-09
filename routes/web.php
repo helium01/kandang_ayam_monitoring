@@ -7,6 +7,7 @@ use App\Http\Controllers\Esp32Controller;
 use App\Http\Controllers\ServoController;
 use App\Http\Controllers\LdrController;
 use App\Http\Controllers\RtcController;
+use App\Http\Controllers\GasController;
 
 use App\Http\Controllers\AyamController;
 
@@ -33,6 +34,7 @@ Route::get('/saklar', [SaklarController::class, 'index2']);
 Route::get('/dht', [DhtController::class, 'index2']);
 Route::get('/esp32', [Esp32Controller::class, 'index2']);
 Route::get('/ldr', [LdrController::class, 'index2']);
+Route::get('/gas', [GasController::class, 'index2']);
 Route::get('/servo', [ServoController::class, 'index2']);
 Route::get('/rtc', [RtcController::class, 'index2']);
 Route::get('/servos', [ServoController::class, 'index']);

@@ -66,3 +66,11 @@ Route::post('/servos/front', [ServoController::class, 'store2']);
 Route::get('/servos/{id}', [ServoController::class, 'show']);
 Route::put('/servos/{id}', [ServoController::class, 'update']);
 Route::delete('/servos/{id}', [ServoController::class, 'destroy']);
+
+use App\Http\Controllers\GasController;
+
+Route::get('/gass', [GasController::class, 'index']);
+Route::post('/gass', [GasController::class, 'store']);
+Route::get('/gass/{id}', [GasController::class, 'show']);
+Route::put('/gass/{id}', [GasController::class, 'update']);
+Route::delete('/gass/{id}', [GasController::class, 'destroy']);
